@@ -25,7 +25,11 @@
    cd NeuroSimLab
 
 2. Install the dependencies
-  - pip isntall -r requirements.txt
 
-3. Launch the application
+   ```bash
+   pip isntall -r requirements.txt
+
+
+4. Launch the application
+ ```bash
   - steamlit run main.py
