@@ -23,3 +23,9 @@
    ```bash
    git clone https://github.com/gisselleq/NeuroSimLab.git
    cd NeuroSimLab
+
+2. Install the dependencies
+  - pip isntall -r requirements.txt
+
+3. Launch the application
+  - steamlit run main.py
