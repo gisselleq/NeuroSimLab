@@ -31,5 +31,5 @@
 
 
 4. Launch the application
- ```bash
-  - steamlit run main.py
+   ```bash
+   steamlit run main.py
