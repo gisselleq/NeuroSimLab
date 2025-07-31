@@ -33,3 +33,10 @@
 4. Launch the application
    ```bash
    steamlit run main.py
+
+
+## Author
+**Gisselle Quiroz**
+- Contact: gquiroz@lamar.edu
+
+
