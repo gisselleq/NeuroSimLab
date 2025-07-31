@@ -1,17 +1,23 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from simulate import lif_neuron
+from simulate import lif_neuron, bursting_neuron, silent_neuron 
 
-st.title("LIF Neuron Simulation")
 
 st.sidebar.header("Simulation Controls")
 I = st.sidebar.slider("Input Current (I)", 0.0, 5.0, 1.5, 0.1)
 threshold = st.sidebar.slider("Threshold Voltage", 0.0, 5.0, 1.0, 0.1)
 leak = st.sidebar.slider("Leakage Rate", 0.0, 0.1, 0.01, 0.001)
 duration = st.sidebar.slider("Duration (ms)", 100, 1000, 200, 50)
+neuron_type = st.sidebar.selectbox("Neuron Type", ["LIF", "Bursting", "Silent"])
 
-#simulate the LIF neuron
-time, voltage = lif_neuron(I, threshold, leak, duration)
+st.title(f"{neuron_type} Neuron Simulation")
+#simulate the neuron 
+if neuron_type == "LIF":
+    time, voltage = lif_neuron(I, threshold, leak, duration)
+elif neuron_type == "Bursting":
+    time, voltage = bursting_neuron(I, threshold, leak, duration)   
+elif neuron_type == "Silent":
+    time, voltage = silent_neuron(I, threshold, leak, duration)
 
 #plot the results
 fig, ax = plt.subplots()
